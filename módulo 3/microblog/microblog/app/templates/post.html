@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Novo post - Microblog{% endblock %}
+
+{% block content %}
+
+<h1>Novo post</h1>
+
+<form method="POST" action="{{ url_for('post') }}" class="form">
+    <label for="body">O que você está pensando?</label>
+    <textarea name="body" id="body" rows="4" maxlength="280"
+              required autofocus></textarea>
+    <small class="ajuda">Até 280 caracteres.</small>
+
+    <button type="submit" class="btn btn-primario">Postar</button>
+</form>
+
+<p class="link-secundario">
+    <a href="{{ url_for('index') }}">← Voltar</a>
+</p>
+
+{% endblock %}

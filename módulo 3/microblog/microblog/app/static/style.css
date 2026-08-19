@@ -1,0 +1,294 @@
+/* reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+/* navbar */
+.navbar {
+    background: #1e293b;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: #e2e8f0;
+}
+
+.nav-links a:hover, .nav-links a:focus {
+    color: #fff;
+}
+
+.nav-user {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+/* container principal */
+.container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+h2 {
+    margin: 0 0 0.3rem 0;
+    color: #0f172a;
+}
+
+h3 {
+    margin: 1.5rem 0 0.8rem 0;
+    color: #334155;
+}
+
+/* forms */
+.form {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.form label {
+    margin-top: 0.8rem;
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+.form label:first-child {
+    margin-top: 0;
+}
+
+.form input,
+.form textarea {
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #fff;
+    color: #1f2937;
+}
+
+.form input:focus,
+.form textarea:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 1px;
+    border-color: #2563eb;
+}
+
+.form textarea {
+    resize: vertical;
+}
+
+.ajuda {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+}
+
+/* botões */
+.btn {
+    display: inline-block;
+    background: #2563eb;
+    color: #fff;
+    padding: 0.7rem 1.3rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    transition: background 0.15s;
+}
+
+.btn:hover, .btn:focus {
+    background: #1d4ed8;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-primario {
+    background: #2563eb;
+}
+
+/* perfil */
+.perfil {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    gap: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    background: #2563eb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.perfil-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.bio {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.bio-vazia {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* timeline */
+.timeline {
+    margin-top: 1rem;
+}
+
+.post {
+    background: #fff;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    color: #64748b;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.post-header strong {
+    color: #0f172a;
+}
+
+.post-body {
+    color: #1f2937;
+    word-wrap: break-word;
+}
+
+.msg-vazia {
+    color: #64748b;
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+/* welcome */
+.welcome {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.welcome h1 {
+    margin-bottom: 1rem;
+}
+
+/* flash messages */
+.flash {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    border-radius: 4px;
+    color: #78350f;
+}
+
+/* links secundários */
+.link-secundario {
+    margin-top: 1rem;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* responsivo */
+@media (max-width: 500px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .container {
+        margin: 1rem auto;
+    }
+
+    .perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+}

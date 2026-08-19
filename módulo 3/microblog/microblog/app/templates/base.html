@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Microblog{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <a href="{{ url_for('index') }}" class="logo">Microblog</a>
+        <nav class="nav-links" aria-label="Navegação principal">
+            {% if current_user.is_authenticated %}
+                <span class="nav-user">Olá, {{ current_user.username }}</span>
+                <a href="{{ url_for('logout') }}">Sair</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Entrar</a>
+                <a href="{{ url_for('cadastro') }}">Cadastrar</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main class="container" role="main">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flash" role="alert">
+                    {% for m in messages %}
+                        <li>{{ m }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

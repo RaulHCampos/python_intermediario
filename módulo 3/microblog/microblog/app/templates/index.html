@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Início - Microblog{% endblock %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+
+    <section class="perfil" aria-label="Meu perfil">
+        {% if current_user.foto %}
+            <img src="{{ current_user.foto }}"
+                 alt="Foto de perfil de {{ current_user.username }}"
+                 class="avatar">
+        {% else %}
+            <div class="avatar avatar-placeholder" aria-hidden="true">
+                {{ current_user.username[0]|upper }}
+            </div>
+        {% endif %}
+        <div class="perfil-info">
+            <h2>{{ current_user.username }}</h2>
+            {% if current_user.bio %}
+                <p class="bio">{{ current_user.bio }}</p>
+            {% else %}
+                <p class="bio bio-vazia">Ainda sem bio.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <a href="{{ url_for('post') }}" class="btn btn-primario">Escrever post</a>
+
+    <section class="timeline" aria-label="Timeline">
+        <h3>Últimos posts</h3>
+
+        {% if posts and posts|length > 0 %}
+            {% for p in posts %}
+                <article class="post">
+                    <header class="post-header">
+                        <strong>{{ p.author.username }}</strong>
+                        <time datetime="{{ p.timestamp.isoformat() }}">
+                            {{ p.timestamp.strftime('%d/%m/%Y %H:%M') }}
+                        </time>
+                    </header>
+                    <p class="post-body">{{ p.body }}</p>
+                </article>
+            {% endfor %}
+        {% else %}
+            <p class="msg-vazia">Nenhum post por aqui ainda. Seja o primeiro!</p>
+        {% endif %}
+    </section>
+
+{% else %}
+
+    <div class="welcome">
+        <h1>Bem-vindo ao Microblog</h1>
+        <p>Faça <a href="{{ url_for('login') }}">login</a>
+           ou <a href="{{ url_for('cadastro') }}">cadastre-se</a>
+           para participar.</p>
+    </div>
+
+{% endif %}
+
+{% endblock %}
